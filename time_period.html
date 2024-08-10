@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Time Period</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Select Time Period for Crop Quiz</h1>
+    <form id="timePeriodForm">
+        <label for="timePeriod">Select Time Period:</label>
+        <select id="timePeriod" name="timePeriod">
+            <option value="preHarvest">Pre-Harvest</option>
+            <option value="harvest">Harvest</option>
+            <option value="postHarvest">Post-Harvest</option>
+        </select>
+        <button type="button" onclick="submitTimePeriod()">Submit</button>
+    </form>
+
+    <script>
+        function submitTimePeriod() {
+            const timePeriod = document.getElementById('timePeriod').value;
+            localStorage.setItem('cropTimePeriod', timePeriod);
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+
+</html>
