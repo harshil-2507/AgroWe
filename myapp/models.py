@@ -3,23 +3,23 @@ from django.contrib.auth.models import User
 import random
 
 class FormData(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)  # Corrected field name
-    Crop = models.CharField(max_length=100)
-    Rainfall = models.CharField(max_length=100)
-    Temp = models.CharField(max_length=100)
-    Soil_Type = models.CharField(max_length=100)
-    O2_Level = models.CharField(max_length=100)
-    Calcium = models.CharField(max_length=100)
-    Potassium = models.CharField(max_length=100)  # Corrected case
-    Phosphorous = models.CharField(max_length=100)
-    Nitrogen = models.CharField(max_length=100)
-    Magnesium = models.CharField(max_length=100)
-    Iron = models.CharField(max_length=100)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)  # Corrected field name
+    Crop = models.FloatField(max_length=100,null=True)
+    Rainfall = models.FloatField(max_length=100,null = True)
+    Climate = models.FloatField(max_length=100,null = True)
+    Soil_Type = models.FloatField(max_length=100,null = True)
+    O2_Level = models.FloatField(max_length=100,null = True)
+    Calcium = models.FloatField(max_length=100,null = True)
+    Potassium = models.FloatField(max_length=100,null = True)  # Corrected case
+    Phosphorous = models.FloatField(max_length=100,null = True)
+    Nitrogen = models.FloatField(max_length=100,null = True)
+    Magnesium = models.FloatField(max_length=100,null = True)
+    Iron = models.FloatField(max_length=100,null = True)
 
-class IdealValues(models.Model):
+class IdealValues():
     Crop = models.FloatField(default=100)
     Rainfall = models.FloatField(default=100)
-    Temp = models.FloatField(default=100)
+    Climate = models.FloatField(default=100)
     Soil_Type = models.FloatField(default=100)
     O2_Level = models.FloatField(default=100)
     Calcium = models.FloatField(default=100)

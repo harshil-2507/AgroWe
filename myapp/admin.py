@@ -3,10 +3,10 @@ from .models import FormData
 
 class FormDataAdmin(admin.ModelAdmin):
     list_display = (
-        'user',
+        # 'user',
         'Crop',
         'Rainfall',
-        'Temp',
+        'Climate',
         'Soil_Type',
         'O2_Level',
         'Calcium',

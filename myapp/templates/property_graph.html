@@ -3,51 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Property Graph</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Property Graphs</title>
 </head>
 <body>
-    <h1>Property Comparison</h1>
-    {% if error %}
-        <p>{{ error }}</p>
-    {% else %}
-        <canvas id="propertyChart" width="600" height="400"></canvas>
-        <script>
-            var ctx = document.getElementById('propertyChart').getContext('2d');
-            var propertyValues = {{ property_values|safe }};
-            var userValues = {{ user_values|safe }};
-
-            var labels = Object.keys(propertyValues);
-            var idealData = Object.values(propertyValues);
-            var userData = Object.values(userValues);
-
-            var chart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Ideal Values',
-                        data: idealData,
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
-                    }, {
-                        label: 'User Values',
-                        data: userData,
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgba(255, 99, 132, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-        </script>
-    {% endif %}
+    <h1>Comparison of User Data and Ideal Data</h1>
+    <div>
+        {{ graph_div|safe }}
+    </div>
 </body>
 </html>
