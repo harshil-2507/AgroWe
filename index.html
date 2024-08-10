@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Harvest Stage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Select Your Harvest Stage</h1>
+    <form id="stageForm">
+        <label for="harvestStage">Harvest Stage:</label>
+        <select id="harvestStage" name="harvestStage" required>
+            <option value="Beginning">Beginning</option>
+            <option value="Mid-Season">Mid-Season</option>
+            <option value="Pre-Harvest">Pre-Harvest Season</option>
+        </select>
+        <button type="button" onclick="showForm()">Next</button>
+    </form>
+    <div id="formContainer" style="display:none;">
+        <!-- This will be dynamically populated by JavaScript -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
